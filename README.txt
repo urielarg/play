@@ -53,3 +53,47 @@ To github.com:urielarg/play.git
 uriel@mash:~/Projects/play$
 ```
 
+Ahora voy a crear un nuevo branch y poner en git lo que me pasaste por whatsapp:
+
+```
+uriel@mash:~/Projects/play$ git checkout -b branch_of_ian
+Switched to a new branch 'branch_of_ian'
+uriel@mash:~/Projects/play$ vim read_files.py
+Error detected while processing function vundle#config#bundle[2]..<SNR>9_check_bundle_name:
+line    2:
+Vundle error: Name collision for Plugin scrooloose/nerdtree. Plugin scrooloose/nerdtree previously used the name "nerdtree". Skipping Plugin scrooloose/nerdtree.
+Press ENTER or type command to continue
+uriel@mash:~/Projects/play$ git commit -av -m "commiting in Ian's name what was sent by email"
+On branch branch_of_ian
+Untracked files:
+	read_files.py
+
+nothing added to commit but untracked files present
+uriel@mash:~/Projects/play$ git add read_files.py
+uriel@mash:~/Projects/play$ git status
+On branch branch_of_ian
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   read_files.py
+
+uriel@mash:~/Projects/play$ git commit -av -m "commiting in Ian's name what was sent by email"
+[branch_of_ian d21861a] commiting in Ian's name what was sent by email
+ 1 file changed, 15 insertions(+)
+ create mode 100644 read_files.py
+uriel@mash:~/Projects/play$ git push origin branch_of_ian
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 1.37 KiB | 1.37 MiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'branch_of_ian' on GitHub by visiting:
+remote:      https://github.com/urielarg/play/pull/new/branch_of_ian
+remote:
+To github.com:urielarg/play.git
+ * [new branch]      branch_of_ian -> branch_of_ian
+```
+
+
+Hice commit dos veces porque la primera vez me habia olvidado de hacer "add"
