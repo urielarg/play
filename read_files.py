@@ -1,15 +1,15 @@
 import os
-import mmap
 
-a=1
-for xxx in os.listdir("/home/ian/probanding/"):
-    b="No"
-    if "Player Name:" in xxx.read():
-    b="Yes"
-    dst = str(a) + b + ".txt"
-    src ='/home/ian/probanding/'+ xxx
-    dst ='/home/ian/probanding/'+ dst
-    # rename() function will
-    # rename all the files
-    os.rename(src, dst)
+lista_archivos = os.listdir("/home/ian/Documentos/proyectos/textfiles/files/")
+a = 1
+directorio = '/home/ian/Documentos/proyectos/textfiles/files/'
+
+for archivo in lista_archivos:
+    os.chdir(directorio)
+    archivo_abierto = open(archivo,"a")
+    archivo_abierto.write("Esta linea es agregada automaticamente, estas viendo el archivo numero " + str(a))
+    archivo_abierto.close()
+    nuevo_nombre = 'newname' + str(a) + '.txt'
+    os.rename(directorio + archivo, directorio + nuevo_nombre)
     a += 1
+
